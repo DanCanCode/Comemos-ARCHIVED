@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon main.js",
     "dev": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production"
   },

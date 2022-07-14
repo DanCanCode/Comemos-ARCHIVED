@@ -1,11 +1,16 @@
 const path = require("path");
 const express = require("express");
 const app = express();
-//module.exports = app;
+module.exports = app;
 
 // Include our routes!
 app.use("/api", require("./api"));
 app.use("/users", require("./api/users"));
+app.use("/posts", require("./api/posts"));
+
+// Body parsing middleware
+app.use(express.json({ limit: "30mb" }));
+app.use(express.urlencoded({ limit: "30mb", extended: true }));
 
 // Send index.html for any other requests
 app.get("*", (req, res) => {
@@ -29,13 +34,3 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(err.status || 500).send(err.message || "Internal server error.");
 });
-
-// Server port
-const PORT = process.env.PORT || 1337;
-try {
-  app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT} | http://localhost:${PORT}/`);
-  });
-} catch (error) {
-  console.log(error);
-}
