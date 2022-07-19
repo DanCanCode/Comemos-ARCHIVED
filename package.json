@@ -5,8 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon main.js",
-    "dev": "webpack-dev-server --mode development --open --hot",
+    "start-dev": "webpack --mode development & nodemon main.js",
     "build": "webpack --mode production"
   },
   "keywords": [],
@@ -23,10 +22,8 @@
     "@babel/preset-env": "^7.18.6",
     "@babel/preset-react": "^7.18.6",
     "babel-loader": "^8.2.5",
-    "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.19",
     "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.9.3"
+    "webpack-cli": "^4.10.0"
   }
 }

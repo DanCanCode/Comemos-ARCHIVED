@@ -14,7 +14,7 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 
 // Send index.html for any other requests
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/public/index.html"));
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 // 404
