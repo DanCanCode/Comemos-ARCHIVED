@@ -12,6 +12,8 @@ app.use("/posts", require("./api/posts"));
 app.use(express.json({ limit: "30mb" }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 
+app.use(express.static("./"));
+
 // Send index.html for any other requests
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
