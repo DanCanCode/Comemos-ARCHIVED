@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchPosts } from "../redux-store/posts";
 
-class Posts extends React.Component {
-  render() {
-    return (
-      <>
-        <h1>Posts explore page</h1>
-      </>
-    );
-  }
-}
+const Posts = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch();
+  }, []);
+
+  return (
+    <>
+      <h1>Posts explore page</h1>
+    </>
+  );
+};
 
 export default Posts;
