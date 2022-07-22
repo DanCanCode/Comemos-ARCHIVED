@@ -12,6 +12,7 @@
   "author": "Daniel Espinal",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.3",
     "axios": "^0.27.2",
     "express": "^4.18.1",
     "pg": "^8.7.3",

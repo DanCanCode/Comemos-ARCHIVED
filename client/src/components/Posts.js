@@ -3,11 +3,11 @@ import { useDispatch } from "react-redux";
 import { fetchPosts } from "../redux-store/posts";
 
 const Posts = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch();
-  }, []);
+  // useEffect(() => {
+  //   dispatch(fetchPosts());
+  // }, []);
 
   return (
     <>

@@ -11,7 +11,7 @@ const Post = db.define("Post", {
   },
 
   likes: {
-    type: Sequelize.NUMBER,
+    type: Sequelize.INTEGER,
     defaultValue: 0,
   },
 
