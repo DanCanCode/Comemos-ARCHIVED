@@ -1,7 +1,7 @@
 const path = require("path");
 const express = require("express");
 const app = express();
-module.exports = app;
+const { db } = require("./database");
 
 // Include our routes!
 app.use("/api", require("./api"));
@@ -36,3 +36,15 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(err.status || 500).send(err.message || "Internal server error.");
 });
+
+// Server port
+const PORT = process.env.PORT || 1337;
+db.sync()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server running on port: http://localhost:${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.error(error);
+  });
