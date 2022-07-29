@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <h1>Welcome to Comemos</h1>
       <p>Post photos, share recipes, connect with friends! </p>
-      <LinkButton to="/signup">Sign Up</LinkButton>
+      <StyledLink to="/signup">Sign Up</StyledLink>
     </>
   );
 };
