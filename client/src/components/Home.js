@@ -1,11 +1,12 @@
 import React from "react";
-import { Button } from "../styledcomps";
+import { StyledLink } from "../styledcomps";
 
 const Home = () => {
   return (
     <>
       <h1>Welcome to Comemos</h1>
-      <Button>hello</Button>
+      <p>Post photos, share recipes, connect with friends! </p>
+      <LinkButton to="/signup">Sign Up</LinkButton>
     </>
   );
 };
