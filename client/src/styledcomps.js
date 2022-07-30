@@ -15,16 +15,18 @@ export const Button = styled.button`
 `;
 
 export const StyledLink = styled(Link)`
-  background-color: ${(props) => props.inputColor || "#E8E8E8"};
+  background-color: ${(props) => props.inputColor || "#273469"};
   border-radius: 1em;
   color: #ffffff;
+  display: inline-block;
   font-family: Arial, san-serif;
   padding: 1em;
   text-align: center;
   text-decoration: none;
+  transition: 0.4s;
 
   &:hover {
-    transform: scale(0.5); //not working
-    color: #808080;
+    transform: scale(0.8);
+    transition: 0.4s;
   }
 `;

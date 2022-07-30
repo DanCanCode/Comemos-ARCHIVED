@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledLink } from "../styledcomps";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   return (
@@ -18,7 +18,7 @@ const SignUp = () => {
         </form>
 
         <p>
-          Alreayd a member? <StyledLink to={"/login"}>Login Here!</StyledLink>
+          Alreayd a member? <Link to={"/login"}>Login Here!</Link>
         </p>
       </div>
     </>

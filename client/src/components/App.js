@@ -11,7 +11,7 @@ import Profile from "./Profile";
 const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
-  background-color: aqua;
+  background-color: #fafaff;
 }
 
 @font-face {
@@ -22,7 +22,7 @@ body {
 }
 
 h1 {
-  font-family: Party Confetti
+  font-family: Party Confetti;
 }
 `;
 
