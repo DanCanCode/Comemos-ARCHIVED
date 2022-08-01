@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PopUp } from "../styledcomps";
 
 const SignUp = () => {
   return (
     <>
-      <div>
+      <PopUp>
         <h2>Welcome to Comemos!</h2>
 
         <form>
@@ -20,7 +21,7 @@ const SignUp = () => {
         <p>
           Alreayd a member? <Link to={"/login"}>Login Here!</Link>
         </p>
-      </div>
+      </PopUp>
     </>
   );
 };

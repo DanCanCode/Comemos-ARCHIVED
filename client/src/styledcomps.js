@@ -1,21 +1,26 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Box = styled.div`
-  background-color: rgba(250, 250, 255, 0.8);
-  border-radius: 1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1em;
-`;
-
 export const Button = styled.button`
   border: 2px solid blue;
   border-radius: 10px;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
+`;
+
+export const PopUp = styled.div`
+  background-color: rgba(250, 250, 255, 0.8);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const StyledLink = styled(Link)`
