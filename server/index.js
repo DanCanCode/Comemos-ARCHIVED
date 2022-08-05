@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const { db } = require("./database");
+const seed = require("../seed");
 
 // Include our routes!
 app.use("/api", require("./api"));
@@ -39,12 +40,20 @@ app.use((err, req, res, next) => {
 
 // Server port
 const PORT = process.env.PORT || 1337;
-db.sync()
-  .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server running on port: http://localhost:${PORT}`);
-    });
-  })
-  .catch((error) => {
+const init = async () => {
+  try {
+    if (process.env.SEED === "true") {
+      await seed();
+    } else {
+      db.sync().then(() => {
+        app.listen(PORT, () => {
+          console.log(`Server running on port: http://localhost:${PORT}`);
+        });
+      });
+    }
+  } catch (error) {
     console.error(error);
-  });
+  }
+};
+
+init();

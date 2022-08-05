@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize");
 const db = require("../database");
 
-const User = db.define("User", {
+const User = db.define("user", {
   email: {
     type: Sequelize.STRING(),
     unique: true,

@@ -4,9 +4,9 @@ import { Box } from "../styledcomps";
 const Profile = () => {
   return (
     <>
-      <Box>
+      <PopUp>
         <p>Hello Jeff</p>
-      </Box>
+      </PopUp>
     </>
   );
 };
