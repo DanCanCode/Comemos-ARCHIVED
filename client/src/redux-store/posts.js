@@ -38,7 +38,7 @@ export const deletePost = (post) => {
 // Thunks
 export const fetchPosts = () => {
   return async (dispatch) => {
-    const { data } = await axios.get("/api/posts");
+    const { data } = await axios.get("/api");
     dispatch(setPosts(data));
   };
 };
