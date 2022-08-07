@@ -9,6 +9,10 @@ export const Button = styled.button`
   padding: 0.25em 1em;
 `;
 
+export const Image = styled.img`
+  max-width: 360px;
+`;
+
 export const PopUp = styled.div`
   background-color: rgba(250, 250, 255, 0.8);
   border-radius: 1em;
