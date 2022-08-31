@@ -35,6 +35,42 @@ async function seed() {
       description: "homemade calzone. kiss the 👨‍🍳",
       userId: 1,
     }),
+    Post.create({
+      picture:
+        "https://s.inyourpocket.com/gallery/brighton/2019/12/shutterstock-1567433683.jpg",
+      description: "It's bulking season!",
+      userId: 1,
+    }),
+    Post.create({
+      picture:
+        "https://www.bosshunting.com.au/wp-content/uploads/2020/07/1_Manchester-Evening-News-goes-behind-the-scenes-at-Five-Guys.jpg",
+      description: "Best burgers in NYC",
+      userId: 1,
+    }),
+    Post.create({
+      picture:
+        "https://i.pinimg.com/originals/61/03/27/61032789576e9879820de07fb0fa8b4d.jpg",
+      description: "Do you enjoy sushi?",
+      userId: 1,
+    }),
+    Post.create({
+      picture:
+        "https://hungryhealthyhappy.com/wp-content/uploads/2017/01/Triple-Berry-Oat-Smoothie-featured.jpg",
+      description: "",
+      userId: 1,
+    }),
+    Post.create({
+      picture:
+        "https://www.phoebebakes.com/images/nutella-stuffed-cookies/nutella-stuffed-cookies2.jpg",
+      description: "Nutella-stuffed cookies",
+      userId: 1,
+    }),
+    Post.create({
+      picture:
+        "https://www.californiastrawberries.com/wp-content/uploads/2021/01/mixed-green-strawberry-salad-1024-1024x1024.png",
+      description: "Nutella-stuffed cookies",
+      userId: 1,
+    }),
   ]);
 
   console.log(`seeded successfully`);
