@@ -11,7 +11,13 @@ export const Button = styled.button`
 
 export const Image = styled.img`
   max-width: 240px;
-  padding: 0 2px 0 2px;
+  padding: 2px;
+`;
+
+export const ImageRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  max-height: 200px;
 `;
 
 export const PopUp = styled.div`

@@ -2,7 +2,7 @@ const path = require("path");
 const express = require("express");
 const app = express();
 const { db } = require("./database");
-const seed = require("../seed"); //change to runSeed or remove import
+const seed = require("../seed");
 
 // Include our routes!
 app.use("/api", require("./api"));
