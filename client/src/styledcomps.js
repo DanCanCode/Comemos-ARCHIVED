@@ -10,7 +10,7 @@ export const Button = styled.button`
 `;
 
 export const Image = styled.img`
-  max-width: 360px;
+  max-width: 240px;
   padding: 0 2px 0 2px;
 `;
 
