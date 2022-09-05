@@ -19,6 +19,16 @@ const Post = db.define("post", {
     type: Sequelize.STRING,
     defaultValue: "",
   },
+
+  createdAt: {
+    type: Sequelize.DATE,
+    defaultValue: new Date(),
+  },
+
+  isPublic: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: true,
+  },
 });
 
 module.exports = Post;

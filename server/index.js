@@ -5,9 +5,9 @@ const { db } = require("./database");
 const seed = require("../seed");
 
 // Include our routes!
-app.use("/api", require("./api"));
-app.use("/users", require("./api/users"));
-app.use("/posts", require("./api/posts"));
+app.use("/api", require("./routes"));
+app.use("/users", require("./routes/users"));
+app.use("/posts", require("./routes/posts"));
 
 // Body parsing middleware
 app.use(express.json({ limit: "30mb" }));
