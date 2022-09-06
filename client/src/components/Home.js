@@ -1,30 +1,15 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Image, ImageRow, PopUp, StyledLink } from "../styledcomps";
-import { fetchPosts } from "../redux-store/posts";
+import React from "react";
+import ImageBackground from "./ImageBackground";
+import { Heading, Logo, PopUp, StyledLink, Text } from "../styledcomps";
 
 const Home = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchPosts());
-  }, []);
-
-  const posts = useSelector((state) => state.posts);
-  const images = posts.map((post) => {
-    return <Image key={`${post.id}`} src={`${post.picture}`} />;
-  });
-
-  console.log(images);
   return (
     <div>
-      <ImageRow>{images.slice(0, 6)}</ImageRow>
-      <ImageRow>{images.slice(6, 12)}</ImageRow>
-      <ImageRow>{images.slice(12, 18)}</ImageRow>
-      <ImageRow>{images.slice(0, 6).reverse()}</ImageRow>
+      <ImageBackground />
       <PopUp>
-        <h1>welcome to comemos!</h1>
-        <p>Share photos, find recipes, connect with friends!</p>
+        <Heading>welcome to comemos!</Heading>
+        <Logo src={"./public/images/logo.png"} />
+        <Text>Share photos, find recipes, connect with friends!</Text>
         <StyledLink to="/signup">Sign Up</StyledLink>
       </PopUp>
     </div>

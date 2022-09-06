@@ -1,12 +1,16 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { FaEnvelope, FaLock } from "react-icons/fa";
 
-export const Button = styled.button`
-  border: 2px solid blue;
-  border-radius: 10px;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Heading = styled.h1`
+  margin-bottom: 0;
 `;
 
 export const Image = styled.img`
@@ -28,13 +32,22 @@ export const ImageRow = styled.div`
   max-height: 200px;
 `;
 
+export const InputField = styled.div``;
+
+export const Logo = styled.img`
+  max-width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+`;
+
 export const PopUp = styled.div`
-  background-color: rgba(250, 250, 255, 0.8);
-  border-radius: 1em;
+  background-color: rgba(250, 250, 255, 0.9);
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1em;
+  padding: 40px 20px;
 
   position: absolute;
   top: 50%;
@@ -45,11 +58,11 @@ export const PopUp = styled.div`
 export const StyledLink = styled(Link)`
   align-self: center;
   background-color: ${(props) => props.inputColor || "#273469"};
-  border-radius: 1em;
+  border-radius: 12px;
   color: #ffffff;
   display: inline-block;
   font-family: Arial, san-serif;
-  padding: 1em;
+  padding: 8px;
   text-align: center;
   text-decoration: none;
   transition: 0.4s;
@@ -58,4 +71,13 @@ export const StyledLink = styled(Link)`
     transform: scale(0.8);
     transition: 0.4s;
   }
+`;
+
+export const Text = styled.p`
+  font-weight: bold;
+  overflow-wrap: break-word;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
 `;

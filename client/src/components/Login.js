@@ -1,28 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { PopUp } from "../styledcomps";
+import { Heading, Logo, PopUp, StyledLink, Text } from "../styledcomps";
+import ImageBackground from "./ImageBackground";
+import UserForm from "./UserForm";
 
 const Login = () => {
   return (
-    <>
+    <div>
+      <ImageBackground />
       <PopUp>
-        <h2>Welcome Back!</h2>
+        <Heading>welcome back!</Heading>
+        <Logo src={"./public/images/logo.png"} />
+        <Text>Share photos, find recipes, connect with friends!</Text>
 
-        <form>
-          <label>Email:</label>
-          <input type="text" id="email" name="email" />
+        <UserForm />
 
-          <label>Password:</label>
-          <input type="text" id="password" name="password" />
-
-          <input type="submit" value="Submit"></input>
-        </form>
-
-        <p>
-          New to Comemos? <Link to={"/signup"}>Sign up Here!</Link>
-        </p>
+        <Text>New to Comemos?</Text>
+        <StyledLink to={"/signup"}>Sign up Here!</StyledLink>
       </PopUp>
-    </>
+    </div>
   );
 };
 

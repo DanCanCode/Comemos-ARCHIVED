@@ -11,7 +11,7 @@ import Profile from "./Profile";
 const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
-  background-color: #FFFAFA;
+  background-color: #FAF0E6;
 }
 
 @font-face {
