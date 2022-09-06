@@ -10,8 +10,16 @@ export const Button = styled.button`
 `;
 
 export const Image = styled.img`
-  max-width: 240px;
-  padding: 2px;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px 4px rgba(0, 0, 0, 0.4);
+  max-width: 200px;
+  margin: 24px 20px;
+  transition: 0.6s;
+
+  &:hover {
+    transform: scale(0.8);
+    transition: 0.6s;
+  }
 `;
 
 export const ImageRow = styled.div`

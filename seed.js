@@ -23,7 +23,6 @@ async function seed() {
         "https://cdn.newsday.com/polopoly_fs/1.44260830.1588251750!/httpImage/image.jpg_gen/derivatives/landscape_1280/image.jpg",
       description: 'The "ATOMIC BURGER" from Burgerology',
       userId: 1,
-      isPublic: false,
     }),
     Post.create({
       picture:

@@ -17,17 +17,17 @@ const Home = () => {
 
   console.log(images);
   return (
-    <>
-      <ImageRow>{images}</ImageRow>
-      <ImageRow>{images}</ImageRow>
-      <ImageRow>{images}</ImageRow>
-      <ImageRow>{images}</ImageRow>
+    <div>
+      <ImageRow>{images.slice(0, 6)}</ImageRow>
+      <ImageRow>{images.slice(6, 12)}</ImageRow>
+      <ImageRow>{images.slice(12, 18)}</ImageRow>
+      <ImageRow>{images.slice(0, 6).reverse()}</ImageRow>
       <PopUp>
         <h1>welcome to comemos!</h1>
-        <p>Post photos, share recipes, connect with friends! </p>
+        <p>Share photos, find recipes, connect with friends!</p>
         <StyledLink to="/signup">Sign Up</StyledLink>
       </PopUp>
-    </>
+    </div>
   );
 };
 
