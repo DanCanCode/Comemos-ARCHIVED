@@ -62,6 +62,23 @@ export const ImageRow = styled.div`
   display: flex;
   flex-direction: row;
   max-height: 200px;
+
+  animation: slide;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: ${(props) => props.dir || "normal"};
+  animation-fill-mode: forwards;
+
+  @keyframes slide {
+    0% {
+      left: 0;
+      transform: translateX(-100%)
+    }
+    100% {
+      left: 100%;
+      transform: translateX(100%)
+    }
 `;
 
 export const Input = styled.input`
@@ -83,6 +100,7 @@ export const Logo = styled.img`
 export const PopUp = styled.div`
   background-color: rgba(250, 250, 255, 0.9);
   border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
