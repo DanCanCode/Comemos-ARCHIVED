@@ -15,9 +15,11 @@ const UserForm = (props) => {
     password: "",
   });
 
-  console.log(showPassword);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("you pressed submit");
+  };
 
-  const handleSubmit = () => {};
   return (
     <Form>
       <InputField>
@@ -54,7 +56,11 @@ const UserForm = (props) => {
         />
       </InputField>
 
-      <ButtonInput type="submit" value="Submit"></ButtonInput>
+      <ButtonInput
+        type="submit"
+        value="Submit"
+        onClick={() => handleSubmit()}
+      />
     </Form>
   );
 };
