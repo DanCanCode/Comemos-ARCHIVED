@@ -1,6 +1,12 @@
 import React, { useState } from "react";
-import { Form } from "../styledcomps";
-import { FaEnvelope, FaLock } from "react-icons/fa";
+import {
+  ButtonInput,
+  Form,
+  EmailIcon,
+  LockIcon,
+  Input,
+  InputField,
+} from "../styledcomps";
 
 const UserForm = (props) => {
   const [userData, setUserData] = useState({
@@ -9,30 +15,19 @@ const UserForm = (props) => {
   });
 
   return (
-    <>
-      <Form>
-        <div>
-          <FaEnvelope
-            style={{
-              color: "gray",
-              fontSize: "20px",
-              position: "absolute",
-              marginLeft: "5px",
-            }}
-          />
-          <input type="text" name="email" placeholder="Email" />
-        </div>
+    <Form>
+      <InputField>
+        <EmailIcon />
+        <Input type="text" name="email" placeholder="Email" />
+      </InputField>
 
-        <div>
-          <FaLock
-            style={{ color: "gray", fontSize: "20px", position: "absolute" }}
-          />
-          <input type="text" name="password" placeholder="Password" />
-        </div>
+      <InputField>
+        <LockIcon />
+        <Input type="text" name="password" placeholder="Password" />
+      </InputField>
 
-        <input type="submit" value="Submit"></input>
-      </Form>
-    </>
+      <ButtonInput type="submit" value="Submit"></ButtonInput>
+    </Form>
   );
 };
 

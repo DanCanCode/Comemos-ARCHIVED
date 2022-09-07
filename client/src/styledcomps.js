@@ -2,6 +2,38 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 
+export const ButtonInput = styled.input`
+  background-color: ${(props) => props.color || "#EF3054"};
+  border-radius: 8px;
+  border-style: none;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 10px;
+  margin: 5px;
+  transition: 0.4s;
+
+  &:hover,
+  &:active {
+    background-color: ${(props) => props.color || "#BD2642"};
+    transform: scale(0.8);
+    transition: 0.4s;
+  }
+`;
+
+export const EmailIcon = styled(FaEnvelope)`
+  color: #808080;
+  font-size: 18px;
+  position: absolute;
+  padding: 10px 8px;
+`;
+
+export const LockIcon = styled(FaLock)`
+  color: #808080;
+  font-size: 18px;
+  position: absolute;
+  padding: 10px 8px;
+`;
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -32,7 +64,14 @@ export const ImageRow = styled.div`
   max-height: 200px;
 `;
 
-export const InputField = styled.div``;
+export const Input = styled.input`
+  padding: 10px 30px;
+  font-size: 14px;
+`;
+
+export const InputField = styled.div`
+  margin: 10px 0;
+`;
 
 export const Logo = styled.img`
   max-width: 100px;
@@ -47,7 +86,7 @@ export const PopUp = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 30px 25px;
 
   position: absolute;
   top: 50%;
@@ -57,27 +96,28 @@ export const PopUp = styled.div`
 
 export const StyledLink = styled(Link)`
   align-self: center;
-  background-color: ${(props) => props.inputColor || "#273469"};
-  border-radius: 12px;
+  background-color: ${(props) => props.inputColor || "#254441"};
+  border-radius: 8px;
   color: #ffffff;
   display: inline-block;
-  font-family: Arial, san-serif;
+  font-family: sans-serif;
+  font-size: 14px;
   padding: 8px;
   text-align: center;
   text-decoration: none;
   transition: 0.4s;
 
-  &:hover {
+  &:hover,
+  &:active {
+    background-color: ${(props) => props.inputColor || "#152725"};
     transform: scale(0.8);
     transition: 0.4s;
   }
 `;
 
 export const Text = styled.p`
-  font-weight: bold;
   overflow-wrap: break-word;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 10px auto;
   width: 75%;
 `;
