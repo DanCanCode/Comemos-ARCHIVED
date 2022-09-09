@@ -7,6 +7,8 @@ import {
   Input,
   InputField,
 } from "../styledcomps";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const UserForm = (props) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,14 +16,26 @@ const UserForm = (props) => {
     email: "",
     password: "",
   });
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("you pressed submit");
+
+    try {
+      setError("");
+      setLoading(true);
+      await useAuth.signup(userData.email, userData.password);
+      //useNavigate("/");
+    } catch (error) {
+      setError(error.message);
+      console.log(error.message);
+    }
+    setLoading(false);
   };
 
   return (
-    <Form>
+    <Form onSubmit={() => handleSubmit()}>
       <InputField>
         <EmailIcon />
         <Input
@@ -56,11 +70,7 @@ const UserForm = (props) => {
         />
       </InputField>
 
-      <ButtonInput
-        type="submit"
-        value="Submit"
-        onClick={() => handleSubmit()}
-      />
+      <ButtonInput disabled={loading} type="submit" value="Submit" />
     </Form>
   );
 };
