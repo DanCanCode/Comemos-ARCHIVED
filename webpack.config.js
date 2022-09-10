@@ -1,6 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
-const Dotenv = require("dotenv-webpack");
+require("dotenv").config();
 
 module.exports = {
   entry: "./client/index.js",
@@ -28,7 +28,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new Dotenv({ path: "./.env" }),
     new webpack.DefinePlugin({
       "process.env.REACT_APP_FIREBASE_API_KEY": JSON.stringify(
         process.env.REACT_APP_FIREBASE_API_KEY
