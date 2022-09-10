@@ -21,7 +21,6 @@ const UserForm = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       setError("");
       setLoading(true);
