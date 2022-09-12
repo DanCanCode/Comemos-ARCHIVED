@@ -39,11 +39,11 @@ const App = () => {
       <BrowserRouter>
         <GlobalStyle />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<SignUp />} />
-          <Route exact path="/posts" element={<Posts />} />
-          <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/posts" element={<Posts />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

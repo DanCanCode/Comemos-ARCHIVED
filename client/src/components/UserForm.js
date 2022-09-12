@@ -18,7 +18,7 @@ const UserForm = (props) => {
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { signup } = useAuth();
+  const { signup, login } = useAuth();
 
   const handleSubmit = async (e) => {
     console.log(e);
@@ -27,7 +27,7 @@ const UserForm = (props) => {
       setError("");
       setLoading(true);
       await signup(userData.email, userData.password);
-      //useNavigate("/");
+      useNavigate("/");
     } catch (error) {
       setError(error.message);
       console.log("ERROR", error.message);
