@@ -7,7 +7,7 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import Posts from "./Posts";
 import Profile from "./Profile";
-import { AuthContextProvider } from "../context/AuthContext";
+import { AuthProvider } from "../context/AuthContext";
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -35,7 +35,7 @@ p {
 
 const App = () => {
   return (
-    <AuthContextProvider>
+    <AuthProvider>
       <BrowserRouter>
         <GlobalStyle />
         <Routes>
@@ -46,7 +46,7 @@ const App = () => {
           <Route exact path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
-    </AuthContextProvider>
+    </AuthProvider>
   );
 };
 

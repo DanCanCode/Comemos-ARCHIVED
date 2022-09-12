@@ -18,23 +18,25 @@ const UserForm = (props) => {
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const { signup } = useAuth();
 
   const handleSubmit = async (e) => {
+    console.log(e);
     e.preventDefault();
     try {
       setError("");
       setLoading(true);
-      await useAuth.signup(userData.email, userData.password);
+      await signup(userData.email, userData.password);
       //useNavigate("/");
     } catch (error) {
       setError(error.message);
-      console.log(error.message);
+      console.log("ERROR", error.message);
     }
     setLoading(false);
   };
 
   return (
-    <Form onSubmit={() => handleSubmit()}>
+    <Form onSubmit={handleSubmit}>
       <InputField>
         <EmailIcon />
         <Input
