@@ -6,8 +6,8 @@ const seed = require("../seed");
 
 // Include our routes!
 app.use("/api", require("./routes"));
-app.use("/users", require("./routes/users"));
-app.use("/posts", require("./routes/posts"));
+app.use("/api/users", require("./routes/users"));
+app.use("/api/posts", require("./routes/posts"));
 
 // Body parsing middleware
 app.use(express.json({ limit: "30mb" }));

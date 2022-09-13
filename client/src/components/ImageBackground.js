@@ -11,6 +11,7 @@ const ImageBackground = () => {
   }, []);
 
   const posts = useSelector((state) => state.posts);
+  console.log(posts);
   const images = posts.map((post) => {
     return <Image key={`${post.id}`} src={`${post.picture}`} />;
   });
