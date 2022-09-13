@@ -1,17 +1,17 @@
 import React from "react";
-import ImageBackground from "./ImageBackground";
-import { Heading, Logo, PopUp, StyledLink, Text } from "../styledcomps";
+import Navbar from "./Navbar";
+import { Search, SearchIcon, Container, InnerContainer } from "../styledcomps";
 
 const Home = () => {
   return (
     <div>
-      <ImageBackground />
-      <PopUp>
-        <Heading>welcome to comemos!</Heading>
-        <Logo src={"./public/images/logo.png"} />
-        <Text>Share photos, find recipes, connect with friends!</Text>
-        <StyledLink to="/signup">Sign Up</StyledLink>
-      </PopUp>
+      <Navbar />
+      <Container>
+        <InnerContainer>
+          <SearchIcon />
+          <Search type="text" name="search" placeholder="Search" />
+        </InnerContainer>
+      </Container>
     </div>
   );
 };

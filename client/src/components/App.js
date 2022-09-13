@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
 import { createGlobalStyle } from "styled-components";
 import PartyConfetti from "../../../public/fonts/PartyConfetti.ttf";
+import Welcome from "./Welcome";
+import UserForm from "./UserForm";
 import Home from "./Home";
-import Login from "./Login";
-import SignUp from "./SignUp";
 import Posts from "./Posts";
 import Profile from "./Profile";
 import { AuthProvider } from "../context/AuthContext";
@@ -12,7 +13,7 @@ import { AuthProvider } from "../context/AuthContext";
 const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
-  background-color: #FAF0E6;
+  background-color: #FFFFFF;
 }
 
 @font-face {
@@ -32,18 +33,39 @@ p {
   font-family: Helvetica, Futura, sans-serif;
 }
 `;
-
 const App = () => {
   return (
     <AuthProvider>
       <BrowserRouter>
         <GlobalStyle />
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/posts" element={<Posts />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route exact path="/" element={<Welcome />} />
+          <Route path="/signup" element={<UserForm signup />} />
+          <Route path="/login" element={<UserForm login />} />
+          <Route
+            path="/home"
+            element={
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/posts"
+            element={
+              <PrivateRoute>
+                <Posts />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

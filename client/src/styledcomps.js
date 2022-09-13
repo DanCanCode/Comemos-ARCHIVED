@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { FaEnvelope, FaLock } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaLock,
+  FaSearch,
+  FaUser,
+  FaEye,
+  FaEyeSlash,
+} from "react-icons/fa";
 
 export const ButtonInput = styled.input`
   background-color: ${(props) => props.color || "#EF3054"};
@@ -20,6 +27,44 @@ export const ButtonInput = styled.input`
   }
 `;
 
+export const Container = styled.div`
+  width: calc(100% - 350px);
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 350px;
+  min-height: 100vh;
+`;
+
+export const InnerContainer = styled.div`
+  max-width: 950px;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+`;
+
+export const UserIcon = styled(FaUser)`
+  color: #808080;
+  font-size: 18px;
+  position: absolute;
+  padding: 10px 8px;
+`;
+
+export const EyeIcon = styled(FaEye)`
+  color: #808080;
+  font-size: 20px;
+  position: absolute;
+  padding: 10px 8px;
+`;
+
+export const EyeSlashIcon = styled(FaEyeSlash)`
+  color: #808080;
+  font-size: 20px;
+  position: absolute;
+  padding: 10px 8px;
+`;
+
 export const EmailIcon = styled(FaEnvelope)`
   color: #808080;
   font-size: 18px;
@@ -34,6 +79,13 @@ export const LockIcon = styled(FaLock)`
   padding: 10px 8px;
 `;
 
+export const SearchIcon = styled(FaSearch)`
+  color: #808080;
+  font-size: 18px;
+  position: absolute;
+  padding: 30px 10px;
+`;
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -42,7 +94,7 @@ export const Form = styled.form`
 `;
 
 export const Heading = styled.h1`
-  margin-bottom: 0;
+  margin: 0;
 `;
 
 export const Image = styled.img`
@@ -94,7 +146,13 @@ export const Logo = styled.img`
   max-width: 100px;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+`;
+
+export const Nav = styled.div`
+  background-color: #f0f0f0;
+  position: fiexd;
+  width: 350px;
+  height: 100vh;
 `;
 
 export const PopUp = styled.div`
@@ -104,12 +162,24 @@ export const PopUp = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px 25px;
+  padding: 40px;
 
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+`;
+
+export const Search = styled(Input)`
+  border-radius: 8px;
+  border: 0;
+  background-color: #f2f2f2;
+  padding: 12px 40px;
+  margin: 20px 0;
+
+  &:focus {
+    outline: 0;
+  }
 `;
 
 export const StyledLink = styled(Link)`
