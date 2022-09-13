@@ -1,8 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Nav } from "../styledcomps";
+import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
   return (
     <Nav>
       <a href="#">
@@ -73,12 +76,14 @@ const Navbar = () => {
           Setting
         </a>
 
-        <a href="#">
-          <span>
-            <i></i>
-          </span>
+        <button
+          onClick={async () => {
+            await logout();
+            navigate("/");
+          }}
+        >
           Logout
-        </a>
+        </button>
       </div>
     </Nav>
   );
