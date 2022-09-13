@@ -2,6 +2,15 @@ const Sequelize = require("sequelize");
 const db = require("../database");
 
 const User = db.define("user", {
+  username: {
+    type: Sequelize.STRING(),
+    unique: true,
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+    },
+  },
+
   email: {
     type: Sequelize.STRING(),
     unique: true,
@@ -12,21 +21,12 @@ const User = db.define("user", {
     },
   },
 
-  username: {
-    type: Sequelize.STRING(),
-    unique: true,
-    allowNull: false,
-    validate: {
-      notEmpty: true,
-    },
-  },
-
-  bio: {
+  profilePic: {
     type: Sequelize.STRING,
     defaultValue: "",
   },
 
-  profilePic: {
+  bio: {
     type: Sequelize.STRING,
     defaultValue: "",
   },

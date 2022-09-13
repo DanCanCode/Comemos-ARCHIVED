@@ -1,41 +1,49 @@
 import axios from "axios";
 
-// Action types
-const CREATE_POST = "CREATE_POST";
+// ACTION TYPES
+const ADD_POST = "CREATE_POST";
 const SET_POSTS = "SET_POSTS";
-const UPDATE_POST = "UPDATE_POSTS";
-const DELETE_POSTS = "DELETE_POSTS";
+const SET_SINGLE_POST = "SET_SINGLE_POST";
+const UPDATE_POST = "UPDATE_POST";
+const DELETE_POST = "DELETE_POST";
 
-// Action creators
-export const setPosts = (posts) => {
+// ACTION CREATORS
+const setPosts = (posts) => {
   return {
     type: SET_POSTS,
     posts,
   };
 };
 
-export const createPosts = (post) => {
+const setSinglePost = (post) => {
   return {
-    type: CREATE_POST,
+    type: SET_SINGLE_POST,
     post,
   };
 };
 
-export const updatePost = (post) => {
+const addPost = (post) => {
+  return {
+    type: ADD_POST,
+    post,
+  };
+};
+
+const updatePost = (post) => {
   return {
     type: UPDATE_POST,
     post,
   };
 };
 
-export const deletePost = (post) => {
+const deletePost = (post) => {
   return {
-    type: DELETE_POSTS,
+    type: DELETE_POST,
     post,
   };
 };
 
-// Thunks
+// THUNKS
 export const fetchPosts = () => {
   return async (dispatch) => {
     const { data } = await axios.get("/api/posts");
@@ -43,11 +51,49 @@ export const fetchPosts = () => {
   };
 };
 
-// Reducer
+export const fetchSinglePost = (id) => {
+  return async (dispatch) => {
+    const { data } = await axios.get(`/api/posts/${id}`);
+    dispatch(setSinglePost(data));
+  };
+};
+
+export const createPost = (post) => {
+  return async (dispatch) => {
+    const { data } = await axios.post("/api/posts", post);
+    dispatch(addPost(data));
+  };
+};
+
+export const updatedPost = (post) => {
+  return async (dispatch) => {
+    const { data } = await axios.put(`/api/posts/${post.id}`, post);
+    dispatch(updatePost(data));
+  };
+};
+
+export const removePost = (id) => {
+  return async (dispatch) => {
+    const { data } = await axios.delete(`/api/posts/${id}`);
+    dispatch(deletePost(data));
+  };
+};
+
+// REDUCER
 export default function postsReducer(state = [], action) {
   switch (action.type) {
     case SET_POSTS:
       return action.posts;
+    case SET_SINGLE_POST:
+      return action.post;
+    case ADD_POST:
+      return [...state, action.post];
+    case UPDATE_POST:
+      return state.map((post) =>
+        post.id === action.post.id ? action.post : post
+      );
+    case DELETE_POST:
+      return state.filter((post) => post.id !== action.post.id);
     default:
       return state;
   }
