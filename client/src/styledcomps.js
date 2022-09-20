@@ -214,13 +214,13 @@ export const Text = styled.p`
   color: ${(props) => props.color || "#000000"};
   font-weight: ${(props) => props.weight || "normal"};
   font-size: ${(props) => props.size || "16px"};
-  overflow-wrap: break-word;
+  overflow-wrap: ${(props) => props.overflowWrap || "break-word"};
   text-align: center;
   margin-top: ${(props) => props.mY || "10px"};
   margin-bottom: ${(props) => props.mB || props.mY || "10px"};
   margin-left: auto;
   margin-right: auto;
-  width: 75%;
+  width: ${(props) => props.width || "75%"};
 `;
 
 export const ProfileImage = styled.img`
@@ -237,4 +237,12 @@ export const Flex = styled.div`
   display: flex;
   flex-direction: ${(props) => props.direction || "row"};
   align-items: center;
+  justify-content: ${(props) => props.justifyContent || "flex-start"};
+  margin-top: ${(props) => props.mY || "10px"};
+  margin-bottom: ${(props) => props.mB || props.mY || "10px"};
+  margin-left: ${(props) => props.mX || "0"};
+  margin-right: ${(props) => props.mX || "0"};
+  padding-left: ${(props) => props.pX || "0"};
+  padding-right: ${(props) => props.pX || "0"};
+  border-right: ${(props) => props.bR || "none"};
 `;

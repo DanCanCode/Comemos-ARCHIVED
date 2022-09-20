@@ -35,27 +35,47 @@ const Navbar = () => {
         <Text weight="600" size="20px" mY="20px" mB="10px">
           Daniel Elijah
         </Text>
-        <Text mY="0" size="14px" weight="600" color="#808080">
+        <Text mY="0" size="12px" weight="600" color="#808080">
           @{user.username}
         </Text>
       </Flex>
 
-      <div>
-        <div>
-          <h3>54</h3>
-          <span>Posts</span>
+      <Flex justifyContent="center" mY="20px">
+        <div
+          style={{
+            borderRight: "1px solid rgba(0, 0, 0, 0.2)",
+            padding: "0 25px 10px 25px",
+          }}
+        >
+          <Text weight="600">54</Text>
+          <Text mY="0" size="14px" overflowWrap="normal" width="100%">
+            Posts
+          </Text>
         </div>
 
-        <div>
-          <h3>14.4k</h3>
-          <span>Followers</span>
+        <div
+          style={{
+            borderRight: "1px solid rgba(0, 0, 0, 0.2)",
+            padding: "0 25px 10px 25px",
+          }}
+        >
+          <Text weight="600">14.4k</Text>
+          <Text mY="0" size="14px" overflowWrap="normal" width="100%">
+            Followers
+          </Text>
         </div>
 
-        <div>
-          <h3>14</h3>
-          <span>Following</span>
+        <div
+          style={{
+            padding: "0 25px 10px 25px",
+          }}
+        >
+          <Text weight="600">32</Text>
+          <Text mY="0" size="14px" overflowWrap="normal" width="100%">
+            Following
+          </Text>
         </div>
-      </div>
+      </Flex>
 
       <div>
         <a href="#">
