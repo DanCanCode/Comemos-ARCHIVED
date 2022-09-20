@@ -94,7 +94,11 @@ export const Form = styled.form`
 `;
 
 export const Heading = styled.h1`
+  letter-spacing: ${(props) => props.spacing || "0"};
+  font-size: ${(props) => props.size || "32px"};
   margin: 0;
+  margin-top: ${(props) => props.mT || "0"};
+  margin-left: ${(props) => props.mL || "0"};
 `;
 
 export const Image = styled.img`
@@ -145,7 +149,7 @@ export const InputField = styled.div`
 export const Logo = styled.img`
   max-width: ${(props) => props.size || "100px"};
   margin-left: ${(props) => props.mL || "auto"};
-  margin-right: auto;
+  margin-right: ${(props) => props.mR || "auto"};
   margin-top: ${(props) => props.mT || "0"};
 `;
 
@@ -207,18 +211,30 @@ export const StyledLink = styled(Link)`
 `;
 
 export const Text = styled.p`
+  color: ${(props) => props.color || "#000000"};
+  font-weight: ${(props) => props.weight || "normal"};
+  font-size: ${(props) => props.size || "16px"};
   overflow-wrap: break-word;
   text-align: center;
-  margin: 10px auto;
+  margin-top: ${(props) => props.mY || "10px"};
+  margin-bottom: ${(props) => props.mB || props.mY || "10px"};
+  margin-left: auto;
+  margin-right: auto;
   width: 75%;
 `;
 
 export const ProfileImage = styled.img`
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   overflow: hidden;
-  padding-top: 10px;
+  margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
+`;
+
+export const Flex = styled.div`
+  display: flex;
+  flex-direction: ${(props) => props.direction || "row"};
+  align-items: center;
 `;

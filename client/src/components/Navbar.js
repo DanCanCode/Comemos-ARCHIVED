@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { Nav, ProfileImage, Logo, Heading } from "../styledcomps";
+import { Nav, ProfileImage, Logo, Heading, Flex, Text } from "../styledcomps";
 import { useAuth } from "../context/AuthContext";
 import { fetchSingleUser } from "../redux-store/singleUser";
 
@@ -15,24 +15,30 @@ const Navbar = () => {
   }, []);
 
   const user = useSelector((state) => state.singleUser);
-  console.log(user);
   return (
     <Nav>
-      <Logo size="40px" mL="10px" mT="10px" src={"./public/images/logo.png"} />
-      <Heading>comemos</Heading>
+      <Flex>
+        <Logo
+          size="40px"
+          mL="20px"
+          mT="12px"
+          mR="0"
+          src={"./public/images/logo.png"}
+        />
+        <Heading size="24px" spacing=".5px" mT="12px" mL="12px">
+          comemos
+        </Heading>
+      </Flex>
 
-      <ProfileImage src={user.profilePic} alt="user image" />
-
-      <div>
-        <div>
-          <img src="img/profile.jpg" alt="" />
-        </div>
-        <div>
-          <h1>Dua Lipa</h1>
-          <img src="img/verify.png" alt="" />
-        </div>
-        <span>@lipa</span>
-      </div>
+      <Flex direction="column">
+        <ProfileImage src={user.profilePic} alt="user image" />
+        <Text weight="600" size="20px" mY="20px" mB="10px">
+          Daniel Elijah
+        </Text>
+        <Text mY="0" size="14px" weight="600" color="#808080">
+          @{user.username}
+        </Text>
+      </Flex>
 
       <div>
         <div>
