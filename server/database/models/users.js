@@ -21,6 +21,21 @@ const User = db.define("user", {
     },
   },
 
+  numOfPosts: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
+  },
+
+  following: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
+  },
+
+  followers: {
+    type: Sequelize.INTEGER,
+    defaultValue: 0,
+  },
+
   profilePic: {
     type: Sequelize.STRING,
     defaultValue: "",

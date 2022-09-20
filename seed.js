@@ -8,10 +8,14 @@ async function seed() {
     User.create({
       email: "dancancode@protonmail.com",
       username: "DanCanCode",
+      profilePic:
+        "https://68.media.tumblr.com/a3841903b1a9c7be82dd770becf1fbfb/tumblr_okwu3aAXdF1scj9lro4_1280.png",
     }),
     User.create({
-      email: "mynamejeff456@gmail.com",
+      email: "mynamejeff@comemos.com",
       username: "Jeff",
+      profilePic:
+        "https://www.thefamouspeople.com/profiles/images/jeff-wittek-2.jpg",
     }),
   ]);
 

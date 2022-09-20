@@ -143,14 +143,17 @@ export const InputField = styled.div`
 `;
 
 export const Logo = styled.img`
-  max-width: 100px;
-  margin-left: auto;
+  max-width: ${(props) => props.size || "100px"};
+  margin-left: ${(props) => props.mL || "auto"};
   margin-right: auto;
+  margin-top: ${(props) => props.mT || "0"};
 `;
 
 export const Nav = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: #f0f0f0;
-  position: fiexd;
+  position: fixed;
   width: 350px;
   height: 100vh;
 `;
@@ -208,4 +211,14 @@ export const Text = styled.p`
   text-align: center;
   margin: 10px auto;
   width: 75%;
+`;
+
+export const ProfileImage = styled.img`
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
 `;

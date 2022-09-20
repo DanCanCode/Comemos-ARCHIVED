@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { Nav } from "../styledcomps";
+import { Nav, ProfileImage, Logo, Heading } from "../styledcomps";
 import { useAuth } from "../context/AuthContext";
+import { fetchSingleUser } from "../redux-store/singleUser";
 
 const Navbar = () => {
-  const { logout } = useAuth();
+  const { logout, currentUser } = useAuth();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(fetchSingleUser(currentUser.email));
+  }, []);
+
+  const user = useSelector((state) => state.singleUser);
+  console.log(user);
   return (
     <Nav>
-      <a href="#">
-        <img src="img/logo.png" alt="" />
-      </a>
+      <Logo size="40px" mL="10px" mT="10px" src={"./public/images/logo.png"} />
+      <Heading>comemos</Heading>
+
+      <ProfileImage src={user.profilePic} alt="user image" />
 
       <div>
         <div>
