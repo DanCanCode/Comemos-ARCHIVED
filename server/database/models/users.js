@@ -2,6 +2,14 @@ const Sequelize = require("sequelize");
 const db = require("../database");
 
 const User = db.define("user", {
+  fullName: {
+    type: Sequelize.STRING(),
+    allowNull: false,
+    validate: {
+      notEmpty: true,
+    },
+  },
+
   username: {
     type: Sequelize.STRING(),
     unique: true,

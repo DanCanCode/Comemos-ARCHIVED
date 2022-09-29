@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ImageBackground from "./ImageBackground";
 import {
   ButtonInput,
@@ -8,6 +8,7 @@ import {
   Text,
   Heading,
   StyledLink,
+  AtIcon,
   UserIcon,
   EmailIcon,
   LockIcon,
@@ -21,6 +22,7 @@ import { useAuth } from "../context/AuthContext";
 
 const UserForm = (props) => {
   const [userData, setUserData] = useState({
+    fullName: "",
     username: "",
     email: "",
     password: "",
@@ -28,8 +30,14 @@ const UserForm = (props) => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const { signup, login } = useAuth();
+  const { signup, login, currentUser } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (currentUser) {
+      navigate("/home");
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -69,20 +77,37 @@ const UserForm = (props) => {
 
         <Form onSubmit={handleSubmit}>
           {props.signup && (
-            <InputField>
-              <UserIcon />
-              <Input
-                type="text"
-                name="username"
-                placeholder="Username"
-                onChange={(e) =>
-                  setUserData((prevState) => ({
-                    ...prevState,
-                    username: e.target.value,
-                  }))
-                }
-              />
-            </InputField>
+            <>
+              <InputField>
+                <UserIcon />
+                <Input
+                  type="text"
+                  name="fullName"
+                  placeholder="Full Name"
+                  onChange={(e) =>
+                    setUserData((prevState) => ({
+                      ...prevState,
+                      fullName: e.target.value,
+                    }))
+                  }
+                />
+              </InputField>
+
+              <InputField>
+                <AtIcon />
+                <Input
+                  type="text"
+                  name="username"
+                  placeholder="Username"
+                  onChange={(e) =>
+                    setUserData((prevState) => ({
+                      ...prevState,
+                      username: e.target.value,
+                    }))
+                  }
+                />
+              </InputField>
+            </>
           )}
 
           <InputField>

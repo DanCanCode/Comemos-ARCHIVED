@@ -7,6 +7,7 @@ import {
   FaUser,
   FaEye,
   FaEyeSlash,
+  FaAt,
 } from "react-icons/fa";
 
 export const ButtonInput = styled.input`
@@ -42,6 +43,13 @@ export const InnerContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   min-height: 100vh;
+`;
+
+export const AtIcon = styled(FaAt)`
+  color: #808080;
+  font-size: 18px;
+  position: absolute;
+  padding: 10px 8px;
 `;
 
 export const UserIcon = styled(FaUser)`

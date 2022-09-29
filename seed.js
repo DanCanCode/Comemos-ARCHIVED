@@ -6,12 +6,14 @@ async function seed() {
 
   const users = await Promise.all([
     User.create({
+      fullName: "Daniel Elijah",
       email: "dancancode@protonmail.com",
       username: "DanCanCode",
       profilePic:
         "https://68.media.tumblr.com/a3841903b1a9c7be82dd770becf1fbfb/tumblr_okwu3aAXdF1scj9lro4_1280.png",
     }),
     User.create({
+      fullName: "Jeff Wittek",
       email: "mynamejeff@comemos.com",
       username: "Jeff",
       profilePic:
