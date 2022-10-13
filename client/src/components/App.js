@@ -5,7 +5,7 @@ import { createGlobalStyle } from "styled-components";
 import PartyConfetti from "../../../public/fonts/PartyConfetti.ttf";
 import Welcome from "./Welcome";
 import UserForm from "./UserForm";
-import Home from "./Home";
+import Explore from "./Explore";
 import Posts from "./Posts";
 import Profile from "./Profile";
 import { AuthProvider } from "../context/AuthContext";
@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-p {
+p, a {
   text-align: center;
   font-family: Helvetica, Futura, sans-serif;
 }
@@ -43,10 +43,10 @@ const App = () => {
           <Route path="/signup" element={<UserForm signup />} />
           <Route path="/login" element={<UserForm login />} />
           <Route
-            path="/home"
+            path="/explore"
             element={
               <PrivateRoute>
-                <Home />
+                <Explore />
               </PrivateRoute>
             }
           />

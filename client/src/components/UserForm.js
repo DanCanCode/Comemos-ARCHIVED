@@ -35,7 +35,7 @@ const UserForm = (props) => {
 
   useEffect(() => {
     if (currentUser) {
-      navigate("/home");
+      navigate("/explore");
     }
   }, []);
 
@@ -47,7 +47,7 @@ const UserForm = (props) => {
         setError("");
         setLoading(true);
         await signup(userData.email, userData.password);
-        navigate("/home");
+        navigate("/explore");
       } catch (error) {
         setError(error.message);
         console.log("ERROR", error.message);
@@ -57,7 +57,7 @@ const UserForm = (props) => {
         setError("");
         setLoading(true);
         await login(userData.email, userData.password);
-        navigate("/home");
+        navigate("/explore");
       } catch (error) {
         setError(error.message);
         console.log("ERROR", error.message);

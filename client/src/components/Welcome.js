@@ -10,7 +10,7 @@ const Welcome = () => {
 
   useEffect(() => {
     if (currentUser) {
-      navigate("/home");
+      navigate("/explore");
     }
   }, []);
 

@@ -183,6 +183,18 @@ export const PopUp = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  animation: fadeIn;
+  animation-duration: 3s;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const Search = styled(Input)`
@@ -244,7 +256,7 @@ export const ProfileImage = styled.img`
 export const Flex = styled.div`
   display: flex;
   flex-direction: ${(props) => props.direction || "row"};
-  align-items: center;
+  align-items: ${(props) => props.alignItems || "center"};
   justify-content: ${(props) => props.justifyContent || "flex-start"};
   margin-top: ${(props) => props.mY || "10px"};
   margin-bottom: ${(props) => props.mB || props.mY || "10px"};
@@ -253,4 +265,10 @@ export const Flex = styled.div`
   padding-left: ${(props) => props.pX || "0"};
   padding-right: ${(props) => props.pX || "0"};
   border-right: ${(props) => props.bR || "none"};
+`;
+
+export const Anchor = styled.a`
+  text-decoration: none;
+  margin: 10px 0;
+  font-weight: 500;
 `;

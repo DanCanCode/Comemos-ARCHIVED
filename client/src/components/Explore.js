@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import { Search, SearchIcon, Container, InnerContainer } from "../styledcomps";
 
-const Home = () => {
+const Explore = () => {
   return (
     <div>
       <Navbar />
@@ -16,4 +16,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Explore;
