@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   Nav,
   ProfileImage,
@@ -8,7 +8,7 @@ import {
   Heading,
   Flex,
   Text,
-  Anchor,
+  AnchorLink,
 } from "../styledcomps";
 import { useAuth } from "../context/AuthContext";
 import { fetchSingleUser } from "../redux-store/singleUser";
@@ -85,41 +85,41 @@ const Navbar = () => {
         </div>
       </Flex>
 
-      <Flex direction="column" alignItems="flex-start">
-        <Anchor href="#">
+      <Flex direction="column" alignItems="flex-start" justifyContent="center">
+        <AnchorLink to="/explore">
           <span>
             <i></i>
           </span>
           Explore
-        </Anchor>
+        </AnchorLink>
 
-        <Anchor href="#">
+        <AnchorLink to="/notifications">
           <span>
             <i></i>
           </span>
           Notification
-        </Anchor>
+        </AnchorLink>
 
-        <Anchor href="#">
+        <AnchorLink to="/profile">
           <span>
             <i></i>
           </span>
           Profile
-        </Anchor>
+        </AnchorLink>
 
-        <Anchor href="#">
+        <AnchorLink to="/stats">
           <span>
             <i></i>
           </span>
           Stats
-        </Anchor>
+        </AnchorLink>
 
-        <Anchor href="#">
+        <AnchorLink to="/settings">
           <span>
             <i></i>
           </span>
-          Setting
-        </Anchor>
+          Settings
+        </AnchorLink>
 
         <button
           onClick={async () => {

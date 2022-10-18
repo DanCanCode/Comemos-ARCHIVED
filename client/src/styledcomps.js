@@ -127,6 +127,7 @@ export const ImageRow = styled.div`
   flex-direction: row;
   max-height: 200px;
 
+
   animation: slide;
   animation-duration: 20s;
   animation-iteration-count: infinite;
@@ -267,8 +268,17 @@ export const Flex = styled.div`
   border-right: ${(props) => props.bR || "none"};
 `;
 
-export const Anchor = styled.a`
+export const AnchorLink = styled(Link)`
+  text-align: center;
+  colr: #000000;
   text-decoration: none;
-  margin: 10px 0;
+  margin: 10px 0 10px 50px;
   font-weight: 500;
+
+  &:active {
+    color: ${(props) => props.inputColor || "#ff0000"};
+    border-right: 3px black;
+    transform: scale(0.8);
+    transition: 0.4s;
+  }
 `;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "../styledcomps";
+import { PopUp } from "../styledcomps";
 
 const Profile = () => {
   return (

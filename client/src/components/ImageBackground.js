@@ -16,12 +16,12 @@ const ImageBackground = () => {
   });
 
   return (
-    <>
+    <div style={{ overflow: "hidden" }}>
       <ImageRow>{images.slice(0, 6)}</ImageRow>
       <ImageRow dir="reverse">{images.slice(6, 12)}</ImageRow>
       <ImageRow>{images.slice(12, 18)}</ImageRow>
       <ImageRow dir="reverse">{images.slice(0, 6).reverse()}</ImageRow>
-    </>
+    </div>
   );
 };
 
